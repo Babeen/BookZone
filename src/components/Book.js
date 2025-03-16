@@ -12,7 +12,7 @@ export default function Book() {
   }));
 
   // Pagination state
-  const booksPerPage = 6;
+  const booksPerPage = 8; // Must be a multiple of 4 to keep rows balanced
   const [currentPage, setCurrentPage] = useState(1);
 
   // Calculate total pages
@@ -32,12 +32,9 @@ export default function Book() {
 
   return (
     <>
-      <Sidebar />
       <div className="container-fluid pt-5 d-flex">
-        {/* Sidebar */}
-
-        {/* Content aligned to the right */}
         <div className="row w-100">
+          <Sidebar />
           <div className="col-lg-9 col-md-12 ml-auto">
             <div className="row pb-3">
               <div className="col-12 pb-1">
@@ -56,16 +53,15 @@ export default function Book() {
                       </div>
                     </div>
                   </form>
-                  <div className="dropdown ml-4"></div>
                 </div>
               </div>
 
               {/* Book items */}
               {currentBooks.map((book) => (
-                <div key={book.id} className="col-lg-4 col-md-6 col-sm-12 pb-1">
+                <div key={book.id} className="col-lg-3 col-md-4 col-sm-6 col-6 pb-1">
                   <div className="card product-item border-0 mb-4">
                     <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                      <img className="img-fluid w-100" src={book.image} alt="Book" />
+                      <img className="img-fluid w-100 book-image" src={book.image} alt="Book" />
                     </div>
                     <div className="card-body border-left border-right text-center p-0 pt-4 pb-3">
                       <h6 className="text-truncate mb-3">{book.title}</h6>
@@ -131,6 +127,29 @@ export default function Book() {
           </div>
         </div>
       </div>
+
+      {/* CSS Styles */}
+      <style>
+        {`
+          /* Reduce image size on smaller screens */
+          @media (max-width: 768px) {
+            .book-image {
+              height: 150px;
+              object-fit: contain;
+            }
+          }
+
+          /* Reduce card padding for mobile */
+          @media (max-width: 576px) {
+            .card-body {
+              padding: 5px;
+            }
+            .card-footer {
+              padding: 5px;
+            }
+          }
+        `}
+      </style>
     </>
   );
 }

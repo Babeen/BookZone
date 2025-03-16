@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-export default function Contact() {
+export default function Contact(props) {
   return (
     <>
-           {/* <!-- Contact Start --> */}
+           {/*  Contact Start  */}
     <div className="container-fluid pt-5">
         <div className="text-center mb-4">
             <h2 className="section-title px-5"><span className="px-2">Contact For Any Queries</span></h2>
@@ -45,14 +45,14 @@ export default function Contact() {
             <div className="col-lg-5 mb-5"> 
                 <div className="d-flex flex-column mb-3">
                     <h5 className="font-weight-semi-bold mb-3">Get Office Info</h5>
-                    <p className="mb-2"><i className="fa fa-map-marker-alt text-custom mr-3"></i>Kuleshwor-14, Kathmandu, Nepal</p>
-                    <p className="mb-2"><i className="fa fa-envelope text-custom mr-3"></i>readmorenepal@gmail.com</p>
-                    <p className="mb-2"><i className="fa fa-phone-alt text-custom mr-3"></i>9801156663/9849022243</p>
+                    <p className="mb-2"><i className="fa fa-map-marker-alt text-custom mr-3"></i>{props.address}</p>
+                    <p className="mb-2"><i className="fa fa-envelope text-custom mr-3"></i>{props.mail}</p>
+                    <p className="mb-2"><i className="fa fa-phone-alt text-custom mr-3"></i>{props.phone}</p>
                 </div>
             </div>
         </div>
     </div>
-    {/* <!-- Contact End --> */}
+    {/*  Contact End  */}
     </>
   )
 }

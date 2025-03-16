@@ -1,24 +1,59 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   return (
-    <>
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </>
-  )
+    <div className="d-flex justify-content-center align-items-center  px-3">
+      <div className="container" style={{ maxWidth: "400px" }}>
+        <form name="sentMessage" id="loginForm" noValidate="novalidate">
+          <h3 className="text-center mb-4 fw-bold">Login</h3>
+          <div className="form-group mb-3">
+            <label className="text-capitalize fw-bold">
+              Email address<span className="text-danger">*</span>
+            </label>
+            <input
+              type="email"
+              className="form-control px-3 py-2"
+              id="email"
+              placeholder="Your Email"
+              required="required"
+              data-validation-required-message="Please enter your email"
+            />
+          </div>
+          <div className="form-group mb-3">
+            <label className="text-capitalize fw-bold">
+              Password <span className="text-danger">*</span>
+            </label>
+            <input
+              type="password"
+              className="form-control px-3 py-2"
+              id="password"
+              placeholder="Password"
+              required="required"
+              data-validation-required-message="Please enter password"
+            />
+          </div>
+          <div className="mb-3">
+            <button
+              className="btn btn-primary w-100 text-white py-2"
+              type="submit"
+              id="btnLogin"
+            >
+              LOGIN
+            </button>
+          </div>
+          <div className="d-flex justify-content-between align-items-center">
+            <div>
+              <input type="checkbox" id="rememberMe" />
+              <label htmlFor="rememberMe" className="ms-1">Remember me</label>
+            </div>
+            <Link to="#" className="text-danger">Lost your password?</Link>
+          </div>
+          <div className="mt-3 text-center">
+            <Link to="Signup" className="fw-bold">Create Account</Link>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 }

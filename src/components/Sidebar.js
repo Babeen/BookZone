@@ -38,9 +38,9 @@ export default function Sidebar() {
             <Link
               to="/#"
               className="nav-link dropdown-toggle"
-              data-bs-toggle="dropdown"
+              data-bs-toggle="dropdown" 
             >
-             Categories <i className="fa fa-angle-down float-right mt-1"></i>
+             Categories
             </Link>
             <div className="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
               <Link to="/Text-books" className="dropdown-item">Text Books</Link>

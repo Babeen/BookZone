@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Topbar() {
   return (
     <>
-        {/* <!-- Topbar Start --> */}
+        {/*  Topbar Start  */}
         <div className="container-fluid">
             <div className="row bg-secondary py-2 px-xl-5">
                 <div className="col-lg-6 d-none d-lg-block">
@@ -66,7 +66,7 @@ export default function Topbar() {
                 </div>
             </div>
         </div>
-        {/* <!-- Topbar End --> */}
+        {/*  Topbar End  */}
     </>
   )
 }
